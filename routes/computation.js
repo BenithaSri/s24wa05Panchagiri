@@ -7,6 +7,10 @@ router.get('/', function (req, res, next) {
     var x = Math.floor(Math.random() * 50);
     var y = Math.floor(Math.random() * 50);
 
+    if (req.query.x) {
+        x = parseInt(req.query.x);
+    }
+
 
     function calcAngleDegrees(x, y) {
         return (Math.atan2(y, x) * 180) / Math.PI;
